@@ -3,7 +3,7 @@ import React from "react";
 const About = () => {
   return (
     <div className="bg-gray-200">
-      <div className="h-90 bg-gray-200 flex items-center flex-col px-6 gap-6 pt-20">
+      <div className="h-90 bg-gray-200 flex items-center flex-col mb-24  px-6 gap-6 pt-20">
         <div className="text-4xl text-center font-medium">
           We Take Your Business Success Seriously.
         </div>
@@ -15,53 +15,53 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 px-6 pt-6">
-        <div className="border rounded-2xl bg-emerald-50 h-80 flex flex-col justify-around items-start px-8 pt-6 ">
+      <div className="grid grid-cols-1 gap-6 px-6 pt-22">
+        <div className="border rounded-2xl bg-emerald-50 flex flex-col justify-around items-start px-8 gap-6 py-6 ">
           <div>
             <img src="/vite.svg" alt="" />
           </div>
           <div className="text-2xl font-bold">Management</div>
           <div className="text-lg">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi
-            laborum exercitationem possimus dolorem laudantium doloribus officia
-            dignissimos voluptatum hic? Dignissimos, vitae nesciunt laboriosam
-            consect.
+            laborum exercitationem possimus Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Excepturi laborum exercitationem
+            possimus
           </div>
         </div>
-        <div className="border rounded-2xl bg-emerald-50 h-80 flex flex-col justify-around items-start px-8 pt-6 ">
+        <div className="border rounded-2xl bg-emerald-50  flex flex-col justify-around items-start px-8 py-6 ">
           <div>
             <img src="/vite.svg" alt="" />
           </div>
           <div className="text-2xl font-bold">Management</div>
           <div className="text-lg">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi
-            laborum exercitationem possimus dolorem laudantium doloribus officia
-            dignissimos voluptatum hic? Dignissimos, vitae nesciunt laboriosam
-            consect.
+            laborum exercitationem possimus Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Excepturi laborum exercitationem
+            possimus
           </div>
         </div>
-        <div className="border rounded-2xl bg-emerald-50 h-80 flex flex-col justify-around items-start px-8 pt-6 ">
+        <div className="border rounded-2xl bg-emerald-50  flex flex-col justify-around items-start px-8 py-6 ">
           <div>
             <img src="/vite.svg" alt="" />
           </div>
           <div className="text-2xl font-bold">Management</div>
           <div className="text-lg">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi
-            laborum exercitationem possimus dolorem laudantium doloribus officia
-            dignissimos voluptatum hic? Dignissimos, vitae nesciunt laboriosam
-            consect.
+            laborum exercitationem possimus Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Excepturi laborum exercitationem
+            possimus
           </div>
         </div>
-        <div className="border rounded-2xl bg-emerald-50 h-80 flex flex-col justify-around items-start px-8 pt-6 ">
+        <div className="border rounded-2xl bg-emerald-50 flex flex-col justify-around items-start px-8 py-6 ">
           <div>
             <img src="/vite.svg" alt="" />
           </div>
           <div className="text-2xl font-bold">Management</div>
           <div className="text-lg">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi
-            laborum exercitationem possimus dolorem laudantium doloribus officia
-            dignissimos voluptatum hic? Dignissimos, vitae nesciunt laboriosam
-            consect.
+            laborum exercitationem possimus Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Excepturi laborum exercitationem
+            possimus
           </div>
         </div>
       </div>

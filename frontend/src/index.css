@@ -3,3 +3,7 @@
   /* background-color: aqua;
   height: 200vh; */
 }
+
+.primary-btn {
+  @apply py-3 px-8 rounded-full bg-white text-black text-base flex items-center justify-center border-0;
+}
