@@ -2,7 +2,7 @@ import React from "react";
 
 const Portfolio = () => {
   return (
-    <div className="bg-amber-400 pb-90">
+    <div className="bg-amber-400 pb-30">
       <div className="flex flex-col justify-center items-center">
         <div className="p-6">
           <img
@@ -229,6 +229,96 @@ const Portfolio = () => {
       </div>
 
       {/* AfterProject Grid After */}
+      <div className="flex mt-35 gap-4 mx-4 border-0 rounded-2xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div>
+            <img
+              className="border-0 h-110 object-cover  rounded-2xl"
+              src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c29mdHdhcmUlMjBlbmdpbmVlcnxlbnwwfHwwfHx8MA%3D%3D"
+              alt=""
+            />
+          </div>
+          <div className="flex flex-col justify-center items-start p-10 gap-5 bg-teal-100 border-0 rounded-2xl">
+            <div>
+              <img src="vite.svg" className="h-16" alt="" />
+            </div>
+            <div>Schedule a call with us to see how we can help you</div>
+            <div>
+              Exploring Solution Together: Book a Consultaion for Personalized
+              Assistance
+            </div>
+
+            <hr className="w-full border-t-2 border-gray-400 my-2" />
+
+            <div className="flex ">
+              <div>
+                <img src="vite.svg" alt="" />
+              </div>
+              <div>info@naxon.com</div>
+            </div>
+            <div className="flex">
+              <div>
+                <img src="vite.svg" alt="" />
+              </div>
+              <div>info@naxon.com</div>
+            </div>
+            <div className="flex">
+              <div>
+                <img src="vite.svg" alt="" />
+              </div>
+              <div>info@naxon.com</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Rating Section */}
+      <div className="flex flex-col gap-12 items-center mt-40">
+        <div className="flex items-center bg-black border-0 rounded-4xl gap-3 px-4 py-3">
+          <div>
+            <img src="vite.svg" alt="" />
+          </div>
+          <div className="text-white">Rated 5/5 By Our Clients</div>
+        </div>
+
+        <div className="text-5xl text-center px-6">
+          Words of praise from others about our presence.
+        </div>
+
+        <div className="bg-stone-200 border-0 rounded-sm m-3">
+          <div className="flex border-0 rounded-2xl justify-around flex-col gap-4 bg-stone-50 p-4 m-4">
+            <div className="flex justify-between">
+              <div className="flex gap-2">
+                <div>5</div>
+                <div>stars</div>
+              </div>
+              <div>Dec 25,2024</div>
+            </div>
+            <div className=" pt-2 pb-12">
+              Their Websites are smooth and Aesthetic and their communicaton is
+              great
+            </div>
+            <div className="flex justify-between">
+              <div className="flex gap-2 ">
+                <div>
+                  <img className="h-6" src="vite.svg" alt="" />
+                </div>
+                <div>Naveed Khan</div>
+              </div>
+              <div>
+                <img className="h-6" src="vite.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div className="flex justify-center gap-6 pb-6">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>...</div>
+            <div>&gt;</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

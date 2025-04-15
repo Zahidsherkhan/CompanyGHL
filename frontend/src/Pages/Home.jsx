@@ -4,6 +4,7 @@ import Card from "../Components/Card";
 import Services from "./Services";
 import About from "./About";
 import Portfolio from "./Portfolio";
+import Contact from "./Contact";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <About />
       <Services />
       <Portfolio />
+      <Contact />
     </>
   );
 };
