@@ -1,30 +1,96 @@
 import React from "react";
 import { motion } from "framer-motion";
-
+import about from "../assets/about.png";
+import image1 from "../assets/portfolioImages/1.png";
+import image2 from "../assets/portfolioImages/2.webp";
+import image3 from "../assets/portfolioImages/3.webp";
+import image4 from "../assets/portfolioImages/4.webp";
+import image5 from "../assets/portfolioImages/5.webp";
+import image6 from "../assets/portfolioImages/6.webp";
+import image7 from "../assets/portfolioImages/7.webp";
+import image8 from "../assets/portfolioImages/8.webp";
+import image9 from "../assets/portfolioImages/9.webp";
+import image10 from "../assets/portfolioImages/10.webp";
+import tick from "../assets/tick.png";
 const Portfolio = () => {
+  const portfolioImageObjects = [
+    { title: "Digital Business Funnel", imageSrc: image1 },
+    { title: "Healthcare Funnel", imageSrc: image2 },
+    { title: "Digital Funnel", imageSrc: image3 },
+    { title: "Digital Business Funnel", imageSrc: image4 },
+    { title: "Digital Business Funnel", imageSrc: image5 },
+    { title: "Digital Business Funnel", imageSrc: image6 },
+    { title: "Digital Business Funnel", imageSrc: image7 },
+    { title: "Digital Business Funnel", imageSrc: image8 },
+    { title: "Digital Business Funnel", imageSrc: image9 },
+    { title: "Digital Business Funnel", imageSrc: image10 },
+  ];
+  const values = [
+    {
+      title: "Awarded",
+      description:
+        "Recognized for excellence, we proudly display accolades that reflect our commitment to outstanding performance",
+    },
+    {
+      title: "Professional",
+      description:
+        "With a professional ethos, we deliver top-tier services backed by expertise and reliability.",
+    },
+    {
+      title: "Innovative",
+      description:
+        "At the forefront of innovation, we consistently pioneer new solutions to keep you ahead in a dynamic market.",
+    },
+    {
+      title: "Supported",
+      description:
+        "Your success is our priority, and our unwavering support ensures you thrive at every step of your journey.",
+    },
+    {
+      title: "Dedicated",
+      description:
+        "Our team is dedicated to exceeding expectations, ensuring unwavering commitment to your success.",
+    },
+    {
+      title: "Global",
+      description:
+        "Operating on a global scale, our reach extends far and wide to serve clients with a truly international perspective.",
+    },
+    {
+      title: "Creative",
+      description:
+        "Infusing creativity into every project, our solutions are tailored to leave a lasting and impactful impression.",
+    },
+    {
+      title: "Focussed",
+      description:
+        "With a laser-focused approach, we channel our efforts to meet and exceed your specific business goals.",
+    },
+  ];
+
   return (
-    <div className="bg-teal-500 pb-30">
+    <div className=" pb-30">
       <div className="flex flex-col justify-center items-center ">
         <div className="p-6 pt-20">
           <img
-            className="border-0 h-110 rounded-2xl"
-            src="https://images.unsplash.com/photo-1482874478989-aaf30c03fe37?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjJ8fHNjcmVlbnxlbnwwfHwwfHx8MA%3D%3D"
+            className="border-0 h-70 rounded-2xl"
+            src={about}
             alt="Portfolio Image"
           />
         </div>
 
-        <div className="text-3xl  px-6 mb-10 mt-6 md:text-5xl md:px-8 md:text-center md:mt-24">
+        <div className="text-3xl  px-6 mb-10 mt-6 sm:text-center md:text-5xl md:px-8 md:text-center md:mt-24">
           Have Any Projects in Mind? Don't Hesitate to Contact US
         </div>
         <div className="text-lg px-6 mb-2">
           Are you ready to make something awesome? Let's get on a call.
         </div>
 
-        <div className="flex flex-row flex-wrap justify-center gap-2">
-          <button className=" py-6 px-2 mt-6 w-full border rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md">
+        <div className="flex flex-row flex-wrap justify-center gap-2 sm:w-full">
+          <button className=" py-6 px-2 mt-6 w-full border-0 rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md sm:w-1/4 sm:py-5 ">
             Schedule a Call
           </button>
-          <button className=" py-6 mt-6 w-full border-0 rounded-full px-2 h-10 flex items-center justify-center bg-white text-black text-md">
+          <button className=" py-6 mt-6 w-full border-0 rounded-full px-2 h-10 flex items-center justify-center bg-white text-black text-md sm:w-1/4 sm:py-5 ">
             Contact Us
           </button>
         </div>
@@ -33,20 +99,20 @@ const Portfolio = () => {
         <div className="text-4xl mt-16  font-semibold mb-8">Our Portfolio</div>
 
         <div className="flex flex-col justify-center items-center gap-6 w-full max-w-[600px] md:flex-row md:pt-8">
-          <button className="primary-btn text-center text-gray-700 max-w-1/2">
+          <button className="primary-btn text-center text-gray-700 max-w-1/2 sm:py-0 sm:px=0 w-0">
             All
           </button>
 
           {/* First Button Row */}
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="primary-btn">Forms</button>
+            <button className="primary-btn">Custom dashboards</button>
             <button className="primary-btn">Forms</button>
           </div>
 
           {/* Second Button Row */}
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="primary-btn">Forms</button>
-            <button className="primary-btn">Forms</button>
+            <button className="primary-btn">Funnels/Websites</button>
+            <button className="primary-btn">Surveys</button>
           </div>
         </div>
       </div>
@@ -55,13 +121,13 @@ const Portfolio = () => {
 
       {/* Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2">
-        {[1, 2, 3, 4, 5, 6].map((_, index) => (
+        {portfolioImageObjects.map((element, index) => (
           <div
             key={index}
             className="bg-stone-50 m-4 py-2 border-0 rounded-2xl h-[600px] overflow-hidden"
           >
             <div className="flex items-center justify-between px-5 pt-6 pb-3">
-              <div>Fitness Funnel</div>
+              <div>{element.title}</div>
               <div>
                 <img src="vite.svg" alt="" className="h-10" />
               </div>
@@ -75,7 +141,7 @@ const Portfolio = () => {
               >
                 <img
                   className="h-[500px] w-full object-cover rounded-3xl"
-                  src="https://images.unsplash.com/photo-1696506121011-a2b464ea2922?w=800&auto=format&fit=crop&q=60"
+                  src={element.imageSrc}
                   alt="Primary"
                 />
                 <img
@@ -102,11 +168,11 @@ const Portfolio = () => {
       {/* AfterProject Text */}
       <div className="flex flex-col items-center mt-20 md:px-18">
         <div className="text-4xl text-center px-4 mb-5">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus
+          There is a reason why we are crashing it on a global market
         </div>
         <div className="text-lg text-center mb-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam
-          distinctio sint quia omnis commodi assumenda eveniet quasi
+          Our success stems from innovative strategies and a commitment to
+          excellence, setting us apart in the market.
         </div>
         <div>
           <button className="primary-btn">Talk to sales</button>
@@ -115,93 +181,26 @@ const Portfolio = () => {
 
       {/* AfterProject Grid */}
 
-      <div className="grid grid-cols-1 mt-20 gap-6 md:grid-cols-2 md:mx-6 xl:grid-cols-3">
-        <div className="flex flex-col items-center bg-stone-50 gap-4 py-8 mx-8 rounded-2xl md:mx-0 ">
-          <div>
-            <img src="vite.svg" alt="" className="h-20" />
+      <div className="grid grid-cols-1 mt-20 gap-6 md:grid-cols-2 md:mx-6 xl:grid-cols-3 sm:grid sm:grid-cols-2 sm:mx-16 ">
+        {values.map((element, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center bg-stone-50 gap-4 py-8 mx-8 sm:mx-0 rounded-2xl md:mx-0 "
+          >
+            <img
+              src={tick}
+              alt=""
+              className="h-20 mb-4 px-2.5 py-3.5 border rounded-[500px] border-black bg-amber-100"
+            />
+            <div className="text-2xl font-medium mb-2">{element.title}</div>
+            <div className="px-4 text-gray-600">{element.description}</div>
           </div>
-          <div className="text-2xl font-medium">Awarded</div>
-          <div className="text-center px-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            et distinctio omnis illum quo aliquam distinctio omnis illum quo
-            aliquam
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center bg-stone-50 gap-4 py-8 mx-8 rounded-2xl md:mx-0">
-          <div>
-            <img src="vite.svg" alt="" className="h-20" />
-          </div>
-          <div className="text-2xl font-medium">Awarded</div>
-          <div className="text-center px-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            et distinctio omnis illum quo aliquam distinctio omnis illum quo
-            aliquam
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center bg-stone-50 gap-4 py-8 mx-8 rounded-2xl md:mx-0">
-          <div>
-            <img src="vite.svg" alt="" className="h-20" />
-          </div>
-          <div className="text-2xl font-medium">Awarded</div>
-          <div className="text-center px-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            et distinctio omnis illum quo aliquam distinctio omnis illum quo
-            aliquam
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center bg-stone-50 gap-4 py-8 mx-8 rounded-2xl md:mx-0">
-          <div>
-            <img src="vite.svg" alt="" className="h-20" />
-          </div>
-          <div className="text-2xl font-medium">Awarded</div>
-          <div className="text-center px-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            et distinctio omnis illum quo aliquam distinctio omnis illum quo
-            aliquam
-          </div>
-        </div>
-
-        <div className="flex flex-col items-center bg-stone-50 gap-4 py-8 mx-8 rounded-2xl md:mx-0">
-          <div>
-            <img src="vite.svg" alt="" className="h-20" />
-          </div>
-          <div className="text-2xl font-medium">Awarded</div>
-          <div className="text-center px-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            et distinctio omnis illum quo aliquam distinctio omnis illum quo
-            aliquam
-          </div>
-        </div>
-        <div className="flex flex-col items-center bg-stone-50 gap-4 py-8 mx-8 rounded-2xl md:mx-0">
-          <div>
-            <img src="vite.svg" alt="" className="h-20" />
-          </div>
-          <div className="text-2xl font-medium">Awarded</div>
-          <div className="text-center px-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            et distinctio omnis illum quo aliquam distinctio omnis illum quo
-            aliquam
-          </div>
-        </div>
-        <div className="flex flex-col items-center bg-stone-50 gap-4 py-8 mx-8 rounded-2xl md:mx-0">
-          <div>
-            <img src="vite.svg" alt="" className="h-20" />
-          </div>
-          <div className="text-2xl font-medium">Awarded</div>
-          <div className="text-center px-8">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam
-            et distinctio omnis illum quo aliquam distinctio omnis illum quo
-            aliquam
-          </div>
-        </div>
+        ))}
       </div>
 
       {/* AfterProject Grid After */}
       <div className="flex mt-35 gap-4 mx-4 border-0 rounded-2xl ">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center sm:grid sm:grid-cols-2">
           <div>
             <img
               className="border-0 h-110 object-cover  rounded-2xl"
@@ -209,11 +208,11 @@ const Portfolio = () => {
               alt=""
             />
           </div>
-          <div className="flex flex-col justify-center items-start p-10 gap-5 bg-teal-100 border-0 rounded-2xl md:px-18">
+          <div className="flex flex-col justify-center items-start p-10 gap-5  border-0 rounded-2xl md:px-18 ">
             <div>
               <img src="vite.svg" className="h-16" alt="" />
             </div>
-            <div className="text-4xl">
+            <div className="text-4xl text-center">
               Schedule a call with us to see how we can help you
             </div>
             <div>
@@ -367,3 +366,10 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
+// import { CiMail } from "react-icons/ci";
+// <CiMail />
+// import { IoMdCall } from "react-icons/io";
+// <IoMdCall />
+// import { CiLocationOn } from "react-icons/ci";
+// <CiLocationOn />
