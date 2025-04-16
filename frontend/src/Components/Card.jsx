@@ -10,19 +10,19 @@ const images = [
 
 const Card = () => {
   return (
-    <div className="bg-gray-200 px-4 pt-34">
+    <div className="bg-gray-200 px-4 pt-34 xl:px-20">
       {/* Shared container with border/rounded */}
       <div className="overflow-hidden rounded-2xl border border-gray-300 bg-gray-100 shadow-xl">
         {/* Static Card Section */}
-        <div className="h-120 flex justify-center flex-col items-center px-8 py-10">
+        <div className="h-120 flex justify-center flex-col items-center px-8 py-10 ">
           <div className="text-7xl mb-8">Finally</div>
-          <div className="text-center">
+          <div className="text-center md:text-2xl">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
             nobis itaque quia quisquam optio explicabo maxime vel exercitationem
             perspiciatis facilis eaque voluptate neque tenetur vero minima, sint
             iusto dolorem consequuntur?
           </div>
-          <div className="py-0 mt-6 px-7 border rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md">
+          <div className="py-0 mt-6 px-7 border rounded-full h-12 flex items-center justify-center bg-black text-gray-50 text-md md:text-xl">
             <button>About Us</button>
           </div>
         </div>
@@ -34,7 +34,7 @@ const Card = () => {
 
           {/* Animated images */}
           <motion.div
-            className="flex flex-col gap-4"
+            className="grid grid-cols-1 md:grid-cols-2 gap-4"
             animate={{ y: ["0%", "-50%"] }}
             transition={{
               duration: 20,

@@ -12,7 +12,7 @@ const Contact = () => {
         <div className="text-3xl">Email</div>
         <div>zahidsher098@gmail.com</div>
         <hr />
-        <div className="flex gap-4 justify-around">
+        <div className="flex gap-4 justify-around md:justify-start md:gap-14">
           <div>
             <img src="vite.svg" alt="" />
           </div>
