@@ -70,8 +70,8 @@ const Portfolio = () => {
               <motion.div
                 className="w-full"
                 initial={{ y: 0 }}
-                whileHover={{ y: "-100%" }}
-                transition={{ duration: 1.5, ease: "easeInOut" }}
+                whileHover={{ y: "-50%" }}
+                transition={{ duration: 1, ease: "easeInOut" }}
               >
                 <img
                   className="h-[500px] w-full object-cover rounded-3xl"
