@@ -10,7 +10,6 @@ const Home = () => {
   return (
     <>
       <Navbar />
-      <div className="">d</div>
       <Card />
       <About />
       <Services />

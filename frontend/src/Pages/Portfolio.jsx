@@ -1,29 +1,29 @@
 import React from "react";
 import { motion } from "framer-motion";
-import about from "../assets/about.png";
-import image1 from "../assets/portfolioImages/1.png";
+import about from "../assets/portfolioImages/about.png";
+import image1 from "../assets/portfolioImages/1.webp";
 import image2 from "../assets/portfolioImages/2.webp";
 import image3 from "../assets/portfolioImages/3.webp";
 import image4 from "../assets/portfolioImages/4.webp";
-import image5 from "../assets/portfolioImages/5.webp";
-import image6 from "../assets/portfolioImages/6.webp";
-import image7 from "../assets/portfolioImages/7.webp";
+import image5 from "../assets/portfolioImages/5.png";
+import image6 from "../assets/portfolioImages/6.png";
+import image7 from "../assets/portfolioImages/7.png";
 import image8 from "../assets/portfolioImages/8.webp";
 import image9 from "../assets/portfolioImages/9.webp";
 import image10 from "../assets/portfolioImages/10.webp";
 import tick from "../assets/tick.png";
 const Portfolio = () => {
   const portfolioImageObjects = [
-    { title: "Digital Business Funnel", imageSrc: image1 },
+    { title: "Digital Funnel", imageSrc: image1 },
     { title: "Healthcare Funnel", imageSrc: image2 },
-    { title: "Digital Funnel", imageSrc: image3 },
-    { title: "Digital Business Funnel", imageSrc: image4 },
-    { title: "Digital Business Funnel", imageSrc: image5 },
-    { title: "Digital Business Funnel", imageSrc: image6 },
-    { title: "Digital Business Funnel", imageSrc: image7 },
-    { title: "Digital Business Funnel", imageSrc: image8 },
+    { title: "RealState Funnel", imageSrc: image3 },
+    { title: "Saas Funnel Funnel", imageSrc: image4 },
+    { title: "Chain Dev App", imageSrc: image5 },
+    { title: "Consulting", imageSrc: image6 },
+    { title: "Dashboard Funnel", imageSrc: image7 },
+    { title: "Barber Funnel", imageSrc: image8 },
     { title: "Digital Business Funnel", imageSrc: image9 },
-    { title: "Digital Business Funnel", imageSrc: image10 },
+    { title: "Surveys", imageSrc: image10 },
   ];
   const values = [
     {
@@ -87,10 +87,10 @@ const Portfolio = () => {
         </div>
 
         <div className="flex flex-row flex-wrap justify-center gap-2 sm:w-full">
-          <button className=" py-6 px-2 mt-6 w-full border-0 rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md sm:w-1/4 sm:py-5 ">
+          <button className=" py-6 px-2 mt-6 w-full border-0 rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md sm:w-1/4 sm:py-5 transition-all duration-300 hover:bg-white hover:text-black hover:border-black cursor-pointer">
             Schedule a Call
           </button>
-          <button className=" py-6 mt-6 w-full border-0 rounded-full px-2 h-10 flex items-center justify-center bg-white text-black text-md sm:w-1/4 sm:py-5 ">
+          <button className=" py-6 mt-6 w-full border-0 rounded-full px-2 h-10 flex items-center justify-center bg-white text-black text-md sm:w-1/4 sm:py-5 transition-all duration-300 hover:bg-black hover:text-white hover:border-white cursor-pointer">
             Contact Us
           </button>
         </div>
@@ -99,7 +99,7 @@ const Portfolio = () => {
         <div className="text-4xl mt-16  font-semibold mb-8">Our Portfolio</div>
 
         <div className="flex flex-col justify-center items-center gap-6 w-full max-w-[600px] md:flex-row md:pt-8">
-          <button className="primary-btn text-center text-gray-700 max-w-1/2 sm:py-0 sm:px=0 w-0">
+          <button className="primary-btn text-center text-gray-700 max-w-1/2 sm:py-0 sm:px=0 w-0 ">
             All
           </button>
 
@@ -118,8 +118,6 @@ const Portfolio = () => {
       </div>
 
       {/* Projects */}
-
-      {/* Projects */}
       <div className="grid grid-cols-1 md:grid-cols-2">
         {portfolioImageObjects.map((element, index) => (
           <div
@@ -129,35 +127,22 @@ const Portfolio = () => {
             <div className="flex items-center justify-between px-5 pt-6 pb-3">
               <div>{element.title}</div>
               <div>
-                <img src="vite.svg" alt="" className="h-10" />
+                <img src={tick} alt="" className="h-10" />
               </div>
             </div>
+
+            {/* Scroll animation on tall image */}
             <div className="overflow-hidden h-[500px] rounded-3xl p-4 group">
               <motion.div
                 className="w-full"
                 initial={{ y: 0 }}
                 whileHover={{ y: "-50%" }}
-                transition={{ duration: 1, ease: "easeInOut" }}
+                transition={{ duration: 1.5, ease: "easeInOut" }}
               >
                 <img
-                  className="h-[500px] w-full object-cover rounded-3xl"
+                  className="h-[1000px] w-full object-cover rounded-3xl"
                   src={element.imageSrc}
-                  alt="Primary"
-                />
-                <img
-                  className="h-[500px] w-full object-cover rounded-3xl"
-                  src={
-                    index === 0
-                      ? "https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?w=1000&auto=format&fit=crop&q=60"
-                      : index === 1
-                      ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
-                      : index === 2
-                      ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
-                      : index === 3
-                      ? "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?w=1000&auto=format&fit=crop&q=60"
-                      : "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1000&auto=format&fit=crop&q=60"
-                  }
-                  alt="Secondary"
+                  alt={element.title}
                 />
               </motion.div>
             </div>

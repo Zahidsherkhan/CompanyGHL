@@ -5,5 +5,5 @@
 }
 
 .primary-btn {
-  @apply py-1.5 px-6 rounded-full bg-white text-black text-base flex items-center justify-center border-0;
+  @apply py-1.5 px-6 rounded-full bg-white text-black text-base flex items-center justify-center border-0 transition-all duration-300 hover:bg-black hover:text-white hover:border-white cursor-pointer;
 }

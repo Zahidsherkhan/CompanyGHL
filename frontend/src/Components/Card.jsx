@@ -26,8 +26,8 @@ const Card = () => {
             perspiciatis facilis eaque voluptate neque tenetur vero minima, sint
             iusto dolorem consequuntur?
           </div>
-          <div className="py-0 mt-6 px-7 border rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md">
-            <button>About Us</button>
+          <div className="py-0 mt-6 px-7 border rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md transition-all duration-300 hover:bg-white hover:text-black hover:border-black cursor-pointer">
+            <button className="cursor-pointer">About Us</button>
           </div>
         </div>
 
