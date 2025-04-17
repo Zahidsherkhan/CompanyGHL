@@ -15,24 +15,41 @@ const Navbar = () => {
     "CONTACT",
     "TEAM",
   ];
+  const menuItemsLarge = [
+    "Home",
+    "About",
+    "Services",
+    "Portfolio",
+    "Contact",
+    "Team",
+  ];
 
   return (
     <>
-      <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 fixed justify-between items-center shadow-md px-2 py-1 max-sm:relative">
-        <div className="w-2/4 ">
+      <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 fixed justify-between items-center shadow-md px-2 py-1 max-sm:relative ">
+        <div className="w-1/4 lg:flex lg:justify-center lg:pr-12">
           <img
             className="w-14.5 h-14.5 rounded-4xl object-contain ml-5"
             src={logo}
             alt=""
           />
         </div>
+        <nav className="max-lg:hidden w-2/4 flex-wrap ">
+          <ul className="flex gap-4 flex-wrap">
+            {menuItemsLarge.map((element, index) => (
+              <li className="border px-5 py-1 rounded-2xl " key={index}>
+                {element}
+              </li>
+            ))}
+          </ul>
+        </nav>
 
-        <div className="flex gap-4 mr-5">
-          <div className="py-6 px-7 border rounded-full h-10 flex items-center bg-black text-white justify-center text-[19px]">
+        <div className="flex gap-4 mr-5 sm:max-w-3/4 pl-3.5 ">
+          <button className="py-6 px-7 border rounded-full h-10 flex items-center bg-black text-white justify-center text-[19px]">
             Get Started
-          </div>
+          </button>
           <div
-            className="flex items-center justify-center pl-2 pr-0 ml-0 mr-0"
+            className="flex items-center justify-center pl-2 pr-0 ml-0 mr-0 lg:hidden"
             onClick={handleMenuClick}
           >
             <AiOutlineMenu className="h-7 w-7 font-bold" />
@@ -48,7 +65,10 @@ const Navbar = () => {
                 src={logo}
                 alt=""
               />
-              <p className="font-extrabold mr-4" onClick={handleMenuClick}>
+              <p
+                className="font-extrabold mr-4 lg:hidden"
+                onClick={handleMenuClick}
+              >
                 CLOSE
               </p>
             </div>
