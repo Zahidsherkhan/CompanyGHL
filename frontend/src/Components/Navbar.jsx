@@ -21,7 +21,7 @@ const Navbar = () => {
       <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 fixed justify-between items-center shadow-md px-2 py-1 max-sm:relative">
         <div className="w-2/4 ">
           <img
-            className="w-1/4 h-1/4 rounded-4xl object-contain ml-5"
+            className="w-14.5 h-14.5 rounded-4xl object-contain ml-5"
             src={logo}
             alt=""
           />
