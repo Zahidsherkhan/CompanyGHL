@@ -41,7 +41,7 @@ const Navbar = () => {
         {flag ? (
           ""
         ) : (
-          <div className="absolute top-3 w-[96%] h-screen bg-[#f3f4f6]">
+          <div className="absolute top-3 w-[98%] h-screen bg-[#f3f4f6]">
             <div className="flex items-center justify-between">
               <img
                 className="w-14.5 h-14.5 rounded-4xl object-contain ml-5"
