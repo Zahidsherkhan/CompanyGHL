@@ -1,11 +1,17 @@
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import logo from "../assets/Logo.jpeg";
+import logo from "../assets/logo.jpg";
 const Navbar = () => {
   let [flag, setFlag] = useState(true);
+  const [activeIndex, setActiveIndex] = useState(null);
+
   let handleMenuClick = () => {
     if (flag) setFlag(false);
     else setFlag(true);
+  };
+
+  const handleSetActive = (index) => {
+    setActiveIndex(index);
   };
   const menuItems = [
     "HOME",
@@ -26,20 +32,29 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 fixed justify-between items-center shadow-md px-2 py-1 max-sm:relative ">
-        <div className="w-1/4 lg:flex lg:justify-center lg:pr-12">
+      <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 fixed items-center shadow-md px-2 py-1 max-sm:relative gap-10">
+        <div className="w-1/4 lg:flex lg:justify-end lg:pr-12 lg:w-[17%] lg:pl-5">
           <img
-            className="w-14.5 h-14.5 rounded-4xl object-contain ml-5"
+            className="w-13.5 h-13.5 rounded-4xl object-contain ml-5"
             src={logo}
             alt=""
           />
         </div>
-        <nav className="max-lg:hidden w-2/4 flex-wrap ">
-          <ul className="flex gap-4 flex-wrap">
-            {menuItemsLarge.map((element, index) => (
-              <li className="border px-5 py-1 rounded-2xl " key={index}>
-                {element}
-              </li>
+
+        <nav className="max-lg:hidden w-[55%] flex-wrap  ">
+          <ul className="flex gap-4 flex-wrap ">
+            {menuItemsLarge.map((item, index) => (
+              <button
+                key={index}
+                onClick={() => handleSetActive(index)}
+                className={`menu-btns ${
+                  activeIndex === index
+                    ? "bg-black border-1 border-black text-amber-50"
+                    : ""
+                }`}
+              >
+                {item}
+              </button>
             ))}
           </ul>
         </nav>
