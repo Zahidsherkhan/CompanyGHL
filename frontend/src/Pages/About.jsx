@@ -6,7 +6,7 @@ const About = () => {
       icon: "/vite.svg",
       title: "Management",
       description:
-        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi laborum exercitationem possimus dolorem laudantium doloribus officia dignissimos voluptatum hic? Dignissimos, vitae nesciunt laboriosam consect.",
+        "Our dedicated management team combines experience and vision to guide the company towards success. We prioritize effective communication, strategic decision-making, and fostering a positive work environment. ",
     },
     {
       icon: "/vite.svg",
@@ -31,7 +31,7 @@ const About = () => {
   return (
     <div className="bg-gray-200">
       <div className="h-90 bg-gray-200 flex items-center flex-col mb-24  px-6 gap-6 pt-20">
-        <div className="text-4xl text-center font-medium">
+        <div className="text-4xl text-center font-semibold capitalize">
           We Take Your Business Success Seriously.
         </div>
         <div className="text-lg text-center">
@@ -42,14 +42,14 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 px-6 pt-6 sm:grid-cols-2">
+      <div className="grid grid-cols-1 gap-6 px-6 pt-6 sm:grid-cols-2 bg">
         {cards.map((card, index) => (
-          <div className="border rounded-2xl bg-emerald-50 h-80 flex flex-col justify-around items-start px-8 pt-6 ">
-            <div>
+          <div className="border rounded-2xl bg-teal-500 h-80 flex flex-col justify-around items-start px-8 pt-6 ">
+            <div className="bg-amber-300">
               <img src={card.img} alt="" />
             </div>
-            <div className="text-2xl font-bold">{card.title}</div>
-            <div className="text-lg">{card.description}</div>
+            <p className="text-2xl font-bold bg">{card.title}</p>
+            <p className="text-lg">{card.description}</p>
           </div>
         ))}
       </div>

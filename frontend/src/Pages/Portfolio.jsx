@@ -12,6 +12,7 @@ import image8 from "../assets/portfolioImages/8.webp";
 import image9 from "../assets/portfolioImages/9.webp";
 import image10 from "../assets/portfolioImages/10.webp";
 import tick from "../assets/tick.png";
+import { HiMiniSquaresPlus } from "react-icons/hi2";
 const Portfolio = () => {
   const portfolioImageObjects = [
     { title: "Digital Business Funnel", imageSrc: image1 },
@@ -70,101 +71,104 @@ const Portfolio = () => {
 
   return (
     <div className=" pb-30">
-      <div className="flex flex-col justify-center items-center ">
-        <div className="p-6 pt-20">
-          <img
-            className="border-0 h-70 rounded-2xl"
-            src={about}
-            alt="Portfolio Image"
-          />
+      <div className="lg:grid lg:grid-cols-2 lg:gap-2">
+        <div className="flex flex-col justify-center items-center ">
+          <div className="p-6 pt-20">
+            <img
+              className="border-0 h-70 rounded-2xl"
+              src={about}
+              alt="Portfolio Image"
+            />
+          </div>
         </div>
-
-        <div className="text-3xl  px-6 mb-10 mt-6 sm:text-center md:text-5xl md:px-8 md:text-center md:mt-24">
-          Have Any Projects in Mind? Don't Hesitate to Contact US
-        </div>
-        <div className="text-lg px-6 mb-2">
-          Are you ready to make something awesome? Let's get on a call.
-        </div>
-
-        <div className="flex flex-row flex-wrap justify-center gap-2 sm:w-full">
-          <button className=" py-6 px-2 mt-6 w-full border-0 rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md sm:w-1/4 sm:py-5 ">
-            Schedule a Call
-          </button>
-          <button className=" py-6 mt-6 w-full border-0 rounded-full px-2 h-10 flex items-center justify-center bg-white text-black text-md sm:w-1/4 sm:py-5 ">
-            Contact Us
-          </button>
+        <div className="flex flex-col items-center justify-center">
+          <div className="text-3xl  px-6 mb-10 mt-6 sm:text-center md:text-5xl md:px-8 md:text-center md:mt-24">
+            Have Any Projects in Mind? Don't Hesitate to Contact US
+          </div>
+          <div className="text-lg px-6 mb-2 text-center">
+            Are you ready to make something awesome? Let's get on a call.
+          </div>
+          <div className="flex flex-row flex-wrap justify-center gap-2 sm:w-full">
+            <button className=" py-6 px-2 mt-6 w-full border-0 rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md sm:w-1/4 sm:py-5 ">
+              Schedule a Call
+            </button>
+            <button className=" py-6 mt-6 w-full border-0 rounded-full px-2 h-10 flex items-center justify-center bg-white text-black text-md sm:w-1/4 sm:py-5 max-md:mt-1 ">
+              Contact Us
+            </button>
+          </div>
         </div>
       </div>
-      <div className="flex flex-col items-center p-4">
+
+      <div className="flex flex-col items-center p-4 ">
         <div className="text-4xl mt-16  font-semibold mb-8">Our Portfolio</div>
+        <div className="bg-[#f8f8f8] pt-6 px-6 rounded-4xl mx-9 flex flex-col items-center md:gap-2">
+          <div className="flex flex-col justify-center items-center gap-6 w-full md:flex-row md:pt-8 flex-wrap max-w-4/5 md:gap-2">
+            <div className="border-1 px-6 py-1.5 rounded-full flex items-center justify-between gap-2">
+              <HiMiniSquaresPlus className="w-4 h-4" />
+              <p>All</p>
+            </div>
 
-        <div className="flex flex-col justify-center items-center gap-6 w-full max-w-[600px] md:flex-row md:pt-8">
-          <button className="primary-btn text-center text-gray-700 max-w-1/2 sm:py-0 sm:px=0 w-0">
-            All
-          </button>
+            {/* First Button Row */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <button className="primary-btn">Custom dashboards</button>
+              <button className="primary-btn">Forms</button>
+            </div>
 
-          {/* First Button Row */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="primary-btn">Custom dashboards</button>
-            <button className="primary-btn">Forms</button>
+            {/* Second Button Row */}
+            <div className="flex flex-wrap justify-center gap-4">
+              <button className="primary-btn">Funnels/Websites</button>
+              <button className="primary-btn">Surveys</button>
+            </div>
           </div>
+          {/* Projects */}
 
-          {/* Second Button Row */}
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="primary-btn">Funnels/Websites</button>
-            <button className="primary-btn">Surveys</button>
+          {/* Projects */}
+          <div className="grid grid-cols-1 md:grid-cols-2">
+            {portfolioImageObjects.map((element, index) => (
+              <div
+                key={index}
+                className="bg-stone-50 m-4 py-2 border-0 rounded-2xl h-[600px] overflow-hidden"
+              >
+                <div className="flex items-center justify-between px-5 pt-6 pb-3">
+                  <div>{element.title}</div>
+                  <div>
+                    <img src="vite.svg" alt="" className="h-10" />
+                  </div>
+                </div>
+                <div className="overflow-hidden h-[500px] rounded-3xl p-4 group">
+                  <motion.div
+                    className="w-full"
+                    initial={{ y: 0 }}
+                    whileHover={{ y: "-50%" }}
+                    transition={{ duration: 1, ease: "easeInOut" }}
+                  >
+                    <img
+                      className="h-[500px] w-full object-cover rounded-3xl"
+                      src={element.imageSrc}
+                      alt="Primary"
+                    />
+                    <img
+                      className="h-[500px] w-full object-cover rounded-3xl"
+                      src={
+                        index === 0
+                          ? "https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?w=1000&auto=format&fit=crop&q=60"
+                          : index === 1
+                          ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
+                          : index === 2
+                          ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
+                          : index === 3
+                          ? "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?w=1000&auto=format&fit=crop&q=60"
+                          : "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1000&auto=format&fit=crop&q=60"
+                      }
+                      alt="Secondary"
+                    />
+                  </motion.div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-
-      {/* Projects */}
-
-      {/* Projects */}
-      <div className="grid grid-cols-1 md:grid-cols-2">
-        {portfolioImageObjects.map((element, index) => (
-          <div
-            key={index}
-            className="bg-stone-50 m-4 py-2 border-0 rounded-2xl h-[600px] overflow-hidden"
-          >
-            <div className="flex items-center justify-between px-5 pt-6 pb-3">
-              <div>{element.title}</div>
-              <div>
-                <img src="vite.svg" alt="" className="h-10" />
-              </div>
-            </div>
-            <div className="overflow-hidden h-[500px] rounded-3xl p-4 group">
-              <motion.div
-                className="w-full"
-                initial={{ y: 0 }}
-                whileHover={{ y: "-50%" }}
-                transition={{ duration: 1, ease: "easeInOut" }}
-              >
-                <img
-                  className="h-[500px] w-full object-cover rounded-3xl"
-                  src={element.imageSrc}
-                  alt="Primary"
-                />
-                <img
-                  className="h-[500px] w-full object-cover rounded-3xl"
-                  src={
-                    index === 0
-                      ? "https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?w=1000&auto=format&fit=crop&q=60"
-                      : index === 1
-                      ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
-                      : index === 2
-                      ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
-                      : index === 3
-                      ? "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?w=1000&auto=format&fit=crop&q=60"
-                      : "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1000&auto=format&fit=crop&q=60"
-                  }
-                  alt="Secondary"
-                />
-              </motion.div>
-            </div>
-          </div>
-        ))}
-      </div>
-
       {/* AfterProject Text */}
       <div className="flex flex-col items-center mt-20 md:px-18">
         <div className="text-4xl text-center px-4 mb-5">
