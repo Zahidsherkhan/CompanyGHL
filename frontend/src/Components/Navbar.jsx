@@ -1,18 +1,19 @@
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import logo from "../assets/logo.jpg";
+import logo from "../assets/portfolioImages/about.png"; // ✅ Logo import added
+
 const Navbar = () => {
-  let [flag, setFlag] = useState(true);
+  const [flag, setFlag] = useState(true);
   const [activeIndex, setActiveIndex] = useState(null);
 
-  let handleMenuClick = () => {
-    if (flag) setFlag(false);
-    else setFlag(true);
+  const handleMenuClick = () => {
+    setFlag(!flag);
   };
 
   const handleSetActive = (index) => {
     setActiveIndex(index);
   };
+
   const menuItems = [
     "HOME",
     "ABOUT",
@@ -37,12 +38,12 @@ const Navbar = () => {
           <img
             className="w-13.5 h-13.5 rounded-4xl object-contain ml-5"
             src={logo}
-            alt=""
+            alt="logo"
           />
         </div>
 
-        <nav className="max-lg:hidden w-[55%] flex-wrap  ">
-          <ul className="flex gap-4 flex-wrap ">
+        <nav className="max-lg:hidden w-[55%] flex-wrap">
+          <ul className="flex gap-4 flex-wrap">
             {menuItemsLarge.map((item, index) => (
               <button
                 key={index}
@@ -59,7 +60,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <div className="flex gap-4 mr-5 sm:max-w-3/4 pl-3.5 ">
+        <div className="flex gap-4 mr-5 sm:max-w-3/4 pl-3.5">
           <button className="py-6 px-7 border rounded-full h-10 flex items-center bg-black text-white justify-center text-[19px]">
             Get Started
           </button>
@@ -70,35 +71,36 @@ const Navbar = () => {
             <AiOutlineMenu className="h-7 w-7 font-bold" />
           </div>
         </div>
-        {flag ? (
-          ""
-        ) : (
+
+        {!flag && (
           <div className="absolute top-3 w-[98%] h-screen bg-[#f3f4f6]">
             <div className="flex items-center justify-between">
               <img
                 className="w-14.5 h-14.5 rounded-4xl object-contain ml-5"
                 src={logo}
-                alt=""
+                alt="logo"
               />
               <p
-                className="font-extrabold mr-4 lg:hidden"
+                className="font-extrabold mr-4 lg:hidden cursor-pointer"
                 onClick={handleMenuClick}
               >
                 CLOSE
               </p>
             </div>
+
             <div className="flex flex-col items-center mt-10">
               {menuItems.map((element, index) => (
-                <>
+                <React.Fragment key={index}>
                   <hr className="w-[94%] border-t-1 border-gray-300" />
                   <p className="py-6 text-2xl font-semibold">{element}</p>
-                </>
+                </React.Fragment>
               ))}
             </div>
-            <div class="text-black space-y-6 pl-7">
+
+            <div className="text-black space-y-6 pl-7 mt-10">
               <div>
-                <h4 class="text-xl text-gray-500 mb-1">Address</h4>
-                <p class="font-semibold leading-snug text-2xl">
+                <h4 className="text-xl text-gray-500 mb-1">Address</h4>
+                <p className="font-semibold leading-snug text-2xl">
                   541 Melville Geek,
                   <br />
                   Palo Alto, CA 94301
@@ -106,25 +108,25 @@ const Navbar = () => {
               </div>
 
               <div>
-                <h4 class="text-sm text-gray-500 mb-1">Social Media</h4>
-                <ul class="space-y-1">
+                <h4 className="text-sm text-gray-500 mb-1">Social Media</h4>
+                <ul className="space-y-1">
                   <li>
-                    <a href="#" class="hover:underline">
+                    <a href="#" className="hover:underline">
                       Facebook
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="hover:underline">
+                    <a href="#" className="hover:underline">
                       LinkedIn
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="hover:underline">
+                    <a href="#" className="hover:underline">
                       Instagram
                     </a>
                   </li>
                   <li>
-                    <a href="#" class="hover:underline">
+                    <a href="#" className="hover:underline">
                       Twitter
                     </a>
                   </li>
@@ -132,7 +134,7 @@ const Navbar = () => {
               </div>
 
               <div>
-                <h4 class="text-sm text-gray-500 mb-1">Contact Us</h4>
+                <h4 className="text-sm text-gray-500 mb-1">Contact Us</h4>
                 <p>info@Naxon Solution</p>
                 <p>+00 333 112234</p>
               </div>
