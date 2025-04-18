@@ -12,7 +12,13 @@ import image8 from "../assets/portfolioImages/8.webp";
 import image9 from "../assets/portfolioImages/9.webp";
 import image10 from "../assets/portfolioImages/10.webp";
 import tick from "../assets/tick.png";
+import { BsArrowUpRight } from "react-icons/bs";
 import { HiMiniSquaresPlus } from "react-icons/hi2";
+import logo from "../assets/logo.jpg";
+import { CiMail } from "react-icons/ci";
+import { IoMdCall } from "react-icons/io";
+import { CiLocationOn } from "react-icons/ci";
+import clientRating from "../assets/portfolioImages/clientRating.jpg";
 const Portfolio = () => {
   const portfolioImageObjects = [
     { title: "Digital Business Funnel", imageSrc: image1 },
@@ -123,16 +129,16 @@ const Portfolio = () => {
           {/* Projects */}
 
           {/* Projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {portfolioImageObjects.map((element, index) => (
               <div
                 key={index}
-                className="bg-stone-50 m-4 py-2 border-0 rounded-2xl h-[600px] overflow-hidden"
+                className="bg-white m-3 py-2 border-0 rounded-2xl h-[600px] overflow-hidden"
               >
                 <div className="flex items-center justify-between px-5 pt-6 pb-3">
-                  <div>{element.title}</div>
-                  <div>
-                    <img src="vite.svg" alt="" className="h-10" />
+                  <div className="text-xl font-medium">{element.title}</div>
+                  <div className="bg-black px-2.5 py-2.5 rounded-3xl">
+                    <BsArrowUpRight className="text-white" />
                   </div>
                 </div>
                 <div className="overflow-hidden h-[500px] rounded-3xl p-4 group">
@@ -171,15 +177,17 @@ const Portfolio = () => {
       </div>
       {/* AfterProject Text */}
       <div className="flex flex-col items-center mt-20 md:px-18">
-        <div className="text-4xl text-center px-4 mb-5">
+        <div className="text-4xl text-center px-4 mb-5 font-semibold">
           There is a reason why we are crashing it on a global market
         </div>
-        <div className="text-lg text-center mb-5">
+        <div className="text-lg text-center mb-5 px-4">
           Our success stems from innovative strategies and a commitment to
           excellence, setting us apart in the market.
         </div>
         <div>
-          <button className="primary-btn">Talk to sales</button>
+          <button className="px-6 py-2 bg-black text-white rounded-4xl text-xl cursor-pointer">
+            Talk to sales
+          </button>
         </div>
       </div>
 
@@ -194,10 +202,12 @@ const Portfolio = () => {
             <img
               src={tick}
               alt=""
-              className="h-20 mb-4 px-2.5 py-3.5 border rounded-[500px] border-black bg-amber-100"
+              className="h-20 mb-4 px-2.5 py-3.5 border rounded-[500px] border-black bg-green-300"
             />
-            <div className="text-2xl font-medium mb-2">{element.title}</div>
-            <div className="px-4 text-gray-600">{element.description}</div>
+            <div className="text-2xl font-semibold mb-2">{element.title}</div>
+            <div className="px-4 text-gray-600 text-center">
+              {element.description}
+            </div>
           </div>
         ))}
       </div>
@@ -212,11 +222,11 @@ const Portfolio = () => {
               alt=""
             />
           </div>
-          <div className="flex flex-col justify-center items-start p-10 gap-5  border-0 rounded-2xl md:px-18 ">
-            <div>
-              <img src="vite.svg" className="h-16" alt="" />
+          <div className="flex flex-col justify-center items-start p-10 gap-5  border-0 rounded-2xl md:px-18 bg-blue-200 ">
+            <div className="">
+              <img src={logo} className="h-16 rounded-4xl" alt="" />
             </div>
-            <div className="text-4xl text-center">
+            <div className="text-4xl sm:text-center">
               Schedule a call with us to see how we can help you
             </div>
             <div>
@@ -226,23 +236,17 @@ const Portfolio = () => {
 
             <hr className="w-full border-t-2 border-gray-400 my-2" />
 
-            <div className="flex ">
-              <div>
-                <img src="vite.svg" alt="" />
-              </div>
+            <div className="flex g-4  ">
+              <CiMail className="w-6 h-6 mr-2" />
               <div>info@naxon.com</div>
             </div>
             <div className="flex">
-              <div>
-                <img src="vite.svg" alt="" />
-              </div>
-              <div>info@naxon.com</div>
+              <IoMdCall className="w-6 h-6 mr-2" />
+              <a href="">0315 9405079</a>
             </div>
             <div className="flex">
-              <div>
-                <img src="vite.svg" alt="" />
-              </div>
-              <div>info@naxon.com</div>
+              <CiLocationOn className="w-6 h-6 mr-2" />
+              <div>Gulberg Islamabad, Federal Region Islamabad - Pakistan</div>
             </div>
           </div>
         </div>
@@ -250,8 +254,8 @@ const Portfolio = () => {
       {/* Rating Section */}
       <div className="flex flex-col gap-12 items-center mt-40">
         <div className="flex items-center bg-black border-0 rounded-4xl gap-3 px-4 py-3">
-          <div>
-            <img src="vite.svg" alt="" />
+          <div className="bg-white py-1.5 px-1.5 rounded-2xl">
+            <img src={clientRating} className="w-5 h-5" alt="" />
           </div>
           <div className="text-white">Rated 5/5 By Our Clients</div>
         </div>
@@ -370,10 +374,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-
-// import { CiMail } from "react-icons/ci";
-// <CiMail />
-// import { IoMdCall } from "react-icons/io";
-// <IoMdCall />
-// import { CiLocationOn } from "react-icons/ci";
-// <CiLocationOn />
