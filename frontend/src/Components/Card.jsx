@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Chatbox from "./ChatWidgetForm";
 
 const images = [
   "https://plus.unsplash.com/premium_photo-1681666713641-8d722b681edc?w=800&auto=format&fit=crop&q=60",
@@ -13,29 +14,28 @@ const static_images = [
 ];
 const Card = () => {
   return (
-    <div className="bg-gray-200 px-4 pt-34 sm:max-lg:grid-rows-2">
+    <div className="bg-gray-200 px-4 pt-34 sm:max-lg:grid-rows-2 ">
       {/* Shared container with border/rounded */}
 
-      <div className="overflow-hidden rounded-2xl border border-gray-300 bg-gray-100 shadow-xl h-[150vh]">
+      <div className="overflow-hidden rounded-3xl border border-gray-300 bg-gray-100 shadow-xl h-[120vh] lg:grid lg:grid-cols-2 md:mx-7 lg:pr-8">
         {/* Static Card Section */}
-        <div className="h-120 flex justify-center flex-col items-center px-8 py-10">
+        <div className="h-100 flex justify-center flex-col items-center px-8 py-10 lg:block lg:pl-14 pt-42">
           <div className="text-7xl mb-8">Finally</div>
-          <div className="text-center">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
-            nobis itaque quia quisquam optio explicabo maxime vel exercitationem
-            perspiciatis facilis eaque voluptate neque tenetur vero minima, sint
-            iusto dolorem consequuntur?
+          <div className="max-lg:text-center lg:text-2xl">
+            You've discovered Naxon Solution, a comprehensive software company
+            dedicated to providing expert tech support for CRMs, crafting
+            brands, developing websites, and engineering digital solutions for
+            forward-thinking tech enterprises.
           </div>
-          <div className="py-0 mt-6 px-7 border rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md transition-all duration-300 hover:bg-white hover:text-black hover:border-black cursor-pointer">
-            <button className="cursor-pointer">About Us</button>
+          <div className="py-0 mt-6 px-7 border rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md">
+            <button>About Us</button>
           </div>
         </div>
 
         {/* The Div of the images  */}
-        <div className="relative sm:grid grid-cols-2 h-2/5 gap-4">
+        <div className="relative sm:grid grid-cols-2 h-2/5 gap-6">
           <div className="absolute top-0 w-full h-24 shadow-[0_11118px_2000px_1000px_rgba(255,255,255,0.1)">
             {" "}
-            blur
           </div>
 
           {/* White Top Blur */}
@@ -45,7 +45,7 @@ const Card = () => {
           <div className="relative h-[900px] overflow-hidden ">
             {/* Animated images */}
             <motion.div
-              className="flex flex-col gap-4 "
+              className="flex flex-col gap-6 "
               animate={{ y: ["0%", "-50%"] }}
               transition={{
                 duration: 20,
@@ -66,9 +66,9 @@ const Card = () => {
           </div>
 
           {/* Static images section that appears at the breakpoint of sm */}
-          <div className="hidden sm:flex flex-col gap-4">
+          <div className="hidden sm:flex flex-col gap-6">
             {static_images.map((src, index) => (
-              <div key={index} className="h-80">
+              <div key={index} className="h-80 ">
                 <img
                   src={src}
                   alt=""

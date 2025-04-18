@@ -4,7 +4,7 @@ const Services = () => {
   return (
     <div>
       <div className="text-center text-4xl font-medium pt-26">Our Services</div>
-      <div className="grid md:grid-cols-2 gap-6 px-6  pt-12 pb-20 xl:px-70">
+      <div className="grid md:grid-cols-2 gap-6 px-6  pt-12 pb-20 xl:px-20">
         <div className="flex bg-stone-50 flex-col justify-around items-start gap-6 p-4 border-0 rounded-2xl">
           <div>
             <img src="vite.svg" alt="" />
