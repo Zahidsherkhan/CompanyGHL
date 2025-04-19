@@ -2,7 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden sm:px-12">
+    <div className="min-h-screen overflow-x-hidden sm:px-12 lg:grid lg:grid-cols-2">
       <div className="flex pb-10  flex-col bg-white  m-6 p-6 border-0 rounded-3xl py-14 gap-12">
         <div className="text-4xl font-medium">+92&nbsp;347&nbsp;9795053</div>
         <hr />
