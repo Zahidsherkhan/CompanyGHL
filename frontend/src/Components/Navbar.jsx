@@ -32,8 +32,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 items-center shadow-md px-2 sticky top-0 gap-10">
-        <div className="w-1/4 lg:flex lg:justify-end lg:pr-12 lg:w-[17%] lg:pl-5">
+      <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 items-center shadow-md px-2 sticky top-0 gap-10 justify-around">
+        <div className="w-1/4 lg:flex lg:justify-end lg:pr-12 lg:w-[17%] lg:pl-5 ">
           <img
             className="w-13.5 h-13.5 rounded-4xl object-contain ml-5"
             src={logo}
@@ -41,7 +41,7 @@ const Navbar = () => {
           />
         </div>
 
-        <nav className="max-lg:hidden w-[55%] flex-wrap  ">
+        <nav className="max-lg:hidden w-[55%] flex-wrap ">
           <ul className="flex gap-4 flex-wrap ">
             {menuItemsLarge.map((item, index) => (
               <button
@@ -59,7 +59,7 @@ const Navbar = () => {
           </ul>
         </nav>
 
-        <div className="flex gap-4 mr-5 sm:max-w-3/4 pl-3.5 ">
+        <div className="flex gap-4 mr-5 sm:max-w-3/4 pl-3.5">
           <button className="py-6 px-7 border rounded-full h-10 flex items-center bg-black text-white justify-center text-[19px]">
             Get Started
           </button>

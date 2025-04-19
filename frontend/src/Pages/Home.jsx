@@ -5,6 +5,7 @@ import Services from "./Services";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
+import Footer from "./Footer";
 import ChatWidgetForm from "./../Components/ChatWidgetForm";
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Portfolio />
       <Contact />
       <ChatWidgetForm></ChatWidgetForm>
+      <Footer></Footer>
     </>
   );
 };

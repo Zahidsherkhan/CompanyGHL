@@ -1,5 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { useSwipeable } from "react-swipeable";
 import about from "../assets/about.png";
 import image1 from "../assets/portfolioImages/1.png";
 import image2 from "../assets/portfolioImages/2.webp";
@@ -32,6 +34,34 @@ const Portfolio = () => {
     { title: "Digital Business Funnel", imageSrc: image9 },
     { title: "Digital Business Funnel", imageSrc: image10 },
   ];
+
+  const testimonials = [
+    {
+      stars: 5,
+      date: "Dec 25, 2024",
+      text: "They make great websites, communicate with you well and are very easy to work with",
+      author: "AbdulRahman Tijani",
+    },
+    {
+      stars: 5,
+      date: "Dec 25, 2024",
+      text: "Their Websites are smooth and Aesthetic and their communicaton is great",
+      author: "Naveed Khan",
+    },
+    {
+      stars: 5,
+      date: "Dec 25, 2024",
+      text: "Another sample review. The team is very professional and helpful.",
+      author: "Jenna James",
+    },
+    {
+      stars: 5,
+      date: "Dec 25, 2024",
+      text: "Very satisfied with the results. Will work again!",
+      author: "Samantha Lee",
+    },
+  ];
+
   const values = [
     {
       title: "Awarded",
@@ -74,7 +104,15 @@ const Portfolio = () => {
         "With a laser-focused approach, we channel our efforts to meet and exceed your specific business goals.",
     },
   ];
+  const [current, setCurrent] = useState(0);
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: () => setCurrent((prev) => (prev + 1) % testimonials.length),
+    onSwipedRight: () =>
+      setCurrent((prev) => (prev === 0 ? testimonials.length - 1 : prev - 1)),
+    preventDefaultTouchmoveEvent: true,
+    trackMouse: true,
+  });
   return (
     <div className=" pb-30">
       <div className="lg:grid lg:grid-cols-2 lg:gap-2">
@@ -104,14 +142,14 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-
+      {/* bg-[#f8f8f8] */}
       <div className="flex flex-col items-center p-4 ">
         <div className="text-4xl mt-16  font-semibold mb-8">Our Portfolio</div>
-        <div className="bg-[#f8f8f8] pt-6 px-6 rounded-4xl mx-9 flex flex-col items-center md:gap-2">
-          <div className="flex flex-col justify-center items-center gap-6 w-full md:flex-row md:pt-8 flex-wrap max-w-4/5 md:gap-2">
-            <div className="border-1 px-6 py-1.5 rounded-full flex items-center justify-between gap-2">
+        <div className=" pt-6 px-6 rounded-4xl mx-9 flex flex-col items-center md:gap-2">
+          <div className="flex justify-center items-center sm:gap-6 w-full md:flex-row md:pt-8 flex-wrap md:max-w-4/5 md:gap-2 gap-2">
+            <div className="border-1 sm:px-6 sm:py-1.5 px-2 py-2 sm:rounded-full rounded-4xl flex items-center justify-between gap-2">
               <HiMiniSquaresPlus className="w-4 h-4" />
-              <p>All</p>
+              <p className="hidden sm:block">All</p>
             </div>
 
             {/* First Button Row */}
@@ -127,54 +165,55 @@ const Portfolio = () => {
             </div>
           </div>
           {/* Projects */}
-
-          {/* Projects */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {portfolioImageObjects.map((element, index) => (
-              <div
-                key={index}
-                className="bg-white m-3 py-2 border-0 rounded-2xl h-[600px] overflow-hidden"
-              >
-                <div className="flex items-center justify-between px-5 pt-6 pb-3">
-                  <div className="text-xl font-medium">{element.title}</div>
-                  <div className="bg-black px-2.5 py-2.5 rounded-3xl">
-                    <BsArrowUpRight className="text-white" />
-                  </div>
-                </div>
-                <div className="overflow-hidden h-[500px] rounded-3xl p-4 group">
-                  <motion.div
-                    className="w-full"
-                    initial={{ y: 0 }}
-                    whileHover={{ y: "-50%" }}
-                    transition={{ duration: 1, ease: "easeInOut" }}
-                  >
-                    <img
-                      className="h-[500px] w-full object-cover rounded-3xl"
-                      src={element.imageSrc}
-                      alt="Primary"
-                    />
-                    <img
-                      className="h-[500px] w-full object-cover rounded-3xl"
-                      src={
-                        index === 0
-                          ? "https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?w=1000&auto=format&fit=crop&q=60"
-                          : index === 1
-                          ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
-                          : index === 2
-                          ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
-                          : index === 3
-                          ? "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?w=1000&auto=format&fit=crop&q=60"
-                          : "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1000&auto=format&fit=crop&q=60"
-                      }
-                      alt="Secondary"
-                    />
-                  </motion.div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
+
+      {/* Projects */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2 py-13 sm:px-12">
+        {portfolioImageObjects.map((element, index) => (
+          <div
+            key={index}
+            className="bg-white m-3 py-2 border-0 rounded-2xl h-[600px] overflow-hidden"
+          >
+            <div className="flex items-center justify-between px-5 pt-6 pb-3">
+              <div className="text-2xl font-medium">{element.title}</div>
+              <div className="bg-black px-2.5 py-2.5 rounded-3xl">
+                <BsArrowUpRight className="text-white" />
+              </div>
+            </div>
+            <div className="overflow-hidden h-[500px] rounded-3xl p-4 group">
+              <motion.div
+                className="w-full"
+                initial={{ y: 0 }}
+                whileHover={{ y: "-50%" }}
+                transition={{ duration: 1, ease: "easeInOut" }}
+              >
+                <img
+                  className="h-[500px] w-full object-cover rounded-3xl"
+                  src={element.imageSrc}
+                  alt="Primary"
+                />
+                <img
+                  className="h-[500px] w-full object-cover rounded-3xl"
+                  src={
+                    index === 0
+                      ? "https://plus.unsplash.com/premium_photo-1722945683602-fa3b05086316?w=1000&auto=format&fit=crop&q=60"
+                      : index === 1
+                      ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
+                      : index === 2
+                      ? "https://images.unsplash.com/photo-1674027326254-88c960d8e561?w=1000&auto=format&fit=crop&q=60"
+                      : index === 3
+                      ? "https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?w=1000&auto=format&fit=crop&q=60"
+                      : "https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=1000&auto=format&fit=crop&q=60"
+                  }
+                  alt="Secondary"
+                />
+              </motion.div>
+            </div>
+          </div>
+        ))}
+      </div>
+
       {/* AfterProject Text */}
       <div className="flex flex-col items-center mt-20 md:px-18">
         <div className="text-4xl text-center px-4 mb-5 font-semibold">
@@ -193,7 +232,7 @@ const Portfolio = () => {
 
       {/* AfterProject Grid */}
 
-      <div className="grid grid-cols-1 mt-20 gap-6 md:grid-cols-2 md:mx-6 xl:grid-cols-3 sm:grid sm:grid-cols-2 sm:mx-16 ">
+      <div className="grid grid-cols-1 mt-20 gap-6 md:grid-cols-2 md:mx-15 xl:grid-cols-3 sm:grid sm:grid-cols-2 sm:mx-16 ">
         {values.map((element, index) => (
           <div
             key={index}
@@ -214,7 +253,7 @@ const Portfolio = () => {
 
       {/* AfterProject Grid After */}
       <div className="flex mt-35 gap-4 mx-4 border-0 rounded-2xl ">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center sm:grid sm:grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center sm:grid sm:grid-cols-2 md:mx-15">
           <div>
             <img
               className="border-0 h-110 object-cover  rounded-2xl"
@@ -263,109 +302,41 @@ const Portfolio = () => {
         <div className="text-5xl text-center px-6">
           Words of praise from others about our presence.
         </div>
+        <div className="w-full max-w-xl mx-auto mt-10">
+          <div
+            {...swipeHandlers}
+            className="bg-stone-100 p-6 rounded-2xl shadow-md transition-all duration-300"
+          >
+            <div className="flex justify-between items-center mb-4">
+              <div className="flex gap-2 text-yellow-500">
+                {"★".repeat(testimonials[current].stars)}
+              </div>
+              <div className="text-sm text-gray-500">
+                {testimonials[current].date}
+              </div>
+            </div>
+            <p className="text-lg text-gray-700 italic mb-8">
+              “{testimonials[current].text}”
+            </p>
+            <div className="text-right font-semibold text-gray-800">
+              — {testimonials[current].author}
+            </div>
+          </div>
 
-        <div className="grid md:grid-cols-3">
-          <div className="bg-stone-200 border-0 rounded-sm m-3">
-            <div className="flex border-0 rounded-2xl justify-around flex-col gap-4 bg-stone-50 p-4 m-4">
-              <div className="flex justify-between">
-                <div className="flex gap-2">
-                  <div>5</div>
-                  <div>stars</div>
-                </div>
-                <div>Dec 25,2024</div>
-              </div>
-              <div className=" pt-2 pb-12">
-                Their Websites are smooth and Aesthetic and their communicaton
-                is great
-              </div>
-              <div className="flex justify-between">
-                <div className="flex gap-2 ">
-                  <div>
-                    <img className="h-6" src="vite.svg" alt="" />
-                  </div>
-                  <div>Naveed Khan</div>
-                </div>
-                <div>
-                  <img className="h-6" src="vite.svg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-center gap-6 pb-6">
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
-              <div>4</div>
-              <div>...</div>
-              <div>&gt;</div>
-            </div>
-          </div>
-          <div className="bg-stone-200 border-0 rounded-sm m-3">
-            <div className="flex border-0 rounded-2xl justify-around flex-col gap-4 bg-stone-50 p-4 m-4">
-              <div className="flex justify-between">
-                <div className="flex gap-2">
-                  <div>5</div>
-                  <div>stars</div>
-                </div>
-                <div>Dec 25,2024</div>
-              </div>
-              <div className=" pt-2 pb-12">
-                Their Websites are smooth and Aesthetic and their communicaton
-                is great
-              </div>
-              <div className="flex justify-between">
-                <div className="flex gap-2 ">
-                  <div>
-                    <img className="h-6" src="vite.svg" alt="" />
-                  </div>
-                  <div>Naveed Khan</div>
-                </div>
-                <div>
-                  <img className="h-6" src="vite.svg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-center gap-6 pb-6">
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
-              <div>4</div>
-              <div>...</div>
-              <div>&gt;</div>
-            </div>
-          </div>
-          <div className="bg-stone-200 border-0 rounded-sm m-3">
-            <div className="flex border-0 rounded-2xl justify-around flex-col gap-4 bg-stone-50 p-4 m-4">
-              <div className="flex justify-between">
-                <div className="flex gap-2">
-                  <div>5</div>
-                  <div>stars</div>
-                </div>
-                <div>Dec 25,2024</div>
-              </div>
-              <div className=" pt-2 pb-12">
-                Their Websites are smooth and Aesthetic and their communicaton
-                is great
-              </div>
-              <div className="flex justify-between">
-                <div className="flex gap-2 ">
-                  <div>
-                    <img className="h-6" src="vite.svg" alt="" />
-                  </div>
-                  <div>Naveed Khan</div>
-                </div>
-                <div>
-                  <img className="h-6" src="vite.svg" alt="" />
-                </div>
-              </div>
-            </div>
-            <div className="flex justify-center gap-6 pb-6">
-              <div>1</div>
-              <div>2</div>
-              <div>3</div>
-              <div>4</div>
-              <div>...</div>
-              <div>&gt;</div>
-            </div>
+          <div className="flex justify-center gap-3 mt-6">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrent(idx)}
+                className={`w-8 h-8 text-sm rounded-full ${
+                  idx === current
+                    ? "bg-blue-500 text-white"
+                    : "bg-gray-300 text-gray-700"
+                }`}
+              >
+                {idx + 1}
+              </button>
+            ))}
           </div>
         </div>
       </div>
