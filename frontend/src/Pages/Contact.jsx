@@ -11,22 +11,6 @@ const Contact = () => {
         <hr />
         <div className="text-3xl">Email</div>
         <div>sajidsaleem707@gmail.com</div>
-        {/* <hr /> */}
-        {/* SOCIAL ICONS */}
-        {/* <div className="flex gap-4 justify-around md:justify-start md:gap-14">
-          <div>
-            <img src="vite.svg" alt="" />
-          </div>
-          <div>
-            <img src="vite.svg" alt="" />
-          </div>
-          <div>
-            <img src="vite.svg" alt="" />
-          </div>
-          <div>
-            <img src="vite.svg" alt="" />
-          </div>
-        </div> */}
       </div>
       {/* Form Contact */}
       <div className="flex pb-10 flex-col bg-stone-50 m-6 p-6 border-0 rounded-3xl py-14 gap-12 sm:px-14">

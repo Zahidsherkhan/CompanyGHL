@@ -36,7 +36,7 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-gray-200">
+    <div className="bg-gray-200 lg:mx-15">
       <div className="h-90 bg-gray-200 flex items-center flex-col mb-24  px-6 gap-6 pt-20">
         <div className="text-4xl text-center font-semibold capitalize">
           We Take Your Business Success Seriously.
@@ -49,7 +49,7 @@ const About = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-6 px-8 pt-6 sm:grid-cols-2 bg">
+      <div className="grid grid-cols-1 gap-6 px-8 pt-6 sm:grid-cols-2 lg:px-3">
         {cards.map((card, index) => (
           <div className="border rounded-2xl bg-black text-teal-50 flex flex-col justify-around items-start px-8 py-8 ">
             <div className="">{card.icon}</div>

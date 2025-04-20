@@ -256,7 +256,7 @@ const Portfolio = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center sm:grid sm:grid-cols-2 md:mx-15">
           <div>
             <img
-              className="border-0 h-110 object-cover  rounded-2xl"
+              className="border-0 h-110 lg:h-136 object-cover  rounded-2xl"
               src="https://images.unsplash.com/photo-1534665482403-a909d0d97c67?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8c29mdHdhcmUlMjBlbmdpbmVlcnxlbnwwfHwwfHx8MA%3D%3D"
               alt=""
             />
