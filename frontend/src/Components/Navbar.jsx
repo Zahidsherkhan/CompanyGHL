@@ -1,13 +1,15 @@
 import React, { useState } from "react";
+import { Link as RouterLink } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 import { AiOutlineMenu } from "react-icons/ai";
-import logo from "../assets/portfolioImages/about.png"; // ✅ Logo import added
+import logo from "../assets/logo.jpg";
 
 const Navbar = () => {
-  const [flag, setFlag] = useState(true);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleMenuClick = () => {
-    setFlag(!flag);
+    setIsMenuOpen(!isMenuOpen);
   };
 
   const handleSetActive = (index) => {
@@ -22,29 +24,31 @@ const Navbar = () => {
     "CONTACT",
     "TEAM",
   ];
-  const menuItemsLarge = [
-    "Home",
-    "About",
-    "Services",
-    "Portfolio",
-    "Contact",
-    "Team",
-  ];
 
   return (
     <>
-      <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 fixed items-center shadow-md px-2 py-1 max-sm:relative gap-10">
-        <div className="w-1/4 lg:flex lg:justify-end lg:pr-12 lg:w-[17%] lg:pl-5">
-          <img
-            className="w-13.5 h-13.5 rounded-4xl object-contain ml-5"
-            src={logo}
-            alt="logo"
-          />
+      <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 items-center shadow-md px-2 sticky top-0 gap-10 justify-around">
+        {/* Logo */}
+        <div className="w-1/4 lg:flex lg:justify-end lg:pr-12 lg:w-[17%] lg:pl-5 ">
+          <ScrollLink
+            to="HOME"
+            spy={true}
+            smooth={true}
+            offset={-50}
+            duration={500}
+          >
+            <img
+              className="w-13.5 h-13.5 rounded-4xl object-contain ml-5"
+              src={logo}
+              alt="Logo"
+            />
+          </ScrollLink>
         </div>
 
+        {/* Desktop Menu */}
         <nav className="max-lg:hidden w-[55%] flex-wrap">
           <ul className="flex gap-4 flex-wrap">
-            {menuItemsLarge.map((item, index) => (
+            {menuItems.map((item, index) => (
               <button
                 key={index}
                 onClick={() => handleSetActive(index)}
@@ -54,16 +58,27 @@ const Navbar = () => {
                     : ""
                 }`}
               >
-                {item}
+                <ScrollLink
+                  to={item}
+                  spy={true}
+                  smooth={true}
+                  offset={-50}
+                  duration={500}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1).toLowerCase()}
+                </ScrollLink>
               </button>
             ))}
           </ul>
         </nav>
 
+        {/* Right Buttons */}
         <div className="flex gap-4 mr-5 sm:max-w-3/4 pl-3.5">
-          <button className="py-6 px-7 border rounded-full h-10 flex items-center bg-black text-white justify-center text-[19px]">
-            Get Started
-          </button>
+          <RouterLink to="/getstarted">
+            <button className="py-6 px-7 border rounded-full h-10 flex items-center bg-black text-white justify-center text-[19px] cursor-pointer">
+              Get Started
+            </button>
+          </RouterLink>
           <div
             className="flex items-center justify-center pl-2 pr-0 ml-0 mr-0 lg:hidden"
             onClick={handleMenuClick}
@@ -72,13 +87,14 @@ const Navbar = () => {
           </div>
         </div>
 
-        {!flag && (
-          <div className="absolute top-3 w-[98%] h-screen bg-[#f3f4f6]">
-            <div className="flex items-center justify-between">
+        {/* Mobile Menu */}
+        {!isMenuOpen ? null : (
+          <div className="absolute top-3 w-[98%] h-screen bg-[#f3f4f6] z-50 px-4">
+            <div className="flex items-center justify-between py-4">
               <img
                 className="w-14.5 h-14.5 rounded-4xl object-contain ml-5"
                 src={logo}
-                alt="logo"
+                alt="Logo"
               />
               <p
                 className="font-extrabold mr-4 lg:hidden cursor-pointer"
@@ -89,10 +105,22 @@ const Navbar = () => {
             </div>
 
             <div className="flex flex-col items-center mt-10">
-              {menuItems.map((element, index) => (
+              {menuItems.map((item, index) => (
                 <React.Fragment key={index}>
                   <hr className="w-[94%] border-t-1 border-gray-300" />
-                  <p className="py-6 text-2xl font-semibold">{element}</p>
+                  <ScrollLink
+                    to={item}
+                    spy={true}
+                    smooth={true}
+                    offset={-50}
+                    duration={500}
+                    onClick={handleMenuClick}
+                  >
+                    <p className="py-6 text-2xl font-semibold">
+                      {item.charAt(0).toUpperCase() +
+                        item.slice(1).toLowerCase()}
+                    </p>
+                  </ScrollLink>
                 </React.Fragment>
               ))}
             </div>
@@ -135,7 +163,7 @@ const Navbar = () => {
 
               <div>
                 <h4 className="text-sm text-gray-500 mb-1">Contact Us</h4>
-                <p>info@Naxon Solution</p>
+                <p>info@NaxonSolution</p>
                 <p>+00 333 112234</p>
               </div>
             </div>

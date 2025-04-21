@@ -1,5 +1,9 @@
 {
   "dependencies": {
+<<<<<<< HEAD
     "react-icon": "^1.0.0"
+=======
+    "react-scroll": "^1.9.3"
+>>>>>>> for-Contact-21-April
   }
 }

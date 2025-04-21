@@ -14,13 +14,13 @@ const static_images = [
 ];
 const Card = () => {
   return (
-    <div className="bg-gray-200 px-4 pt-34 sm:max-lg:grid-rows-2 ">
+    <div className="px-3 pt-14 sm:max-lg:grid-rows-2">
       {/* Shared container with border/rounded */}
 
       <div className="overflow-hidden rounded-3xl border border-gray-300 bg-gray-100 shadow-xl h-[120vh] lg:grid lg:grid-cols-2 md:mx-7 lg:pr-8">
         {/* Static Card Section */}
         <div className="h-100 flex justify-center flex-col items-center px-8 py-10 lg:block lg:pl-14 pt-42">
-          <div className="text-7xl mb-8">Finally</div>
+          <div className="text-7xl mb-8 mt-25">Finally</div>
           <div className="max-lg:text-center lg:text-2xl">
             You've discovered Naxon Solution, a comprehensive software company
             dedicated to providing expert tech support for CRMs, crafting

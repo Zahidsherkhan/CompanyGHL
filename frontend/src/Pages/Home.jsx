@@ -5,17 +5,21 @@ import Services from "./Services";
 import About from "./About";
 import Portfolio from "./Portfolio";
 import Contact from "./Contact";
+import Footer from "./Footer";
 import ChatWidgetForm from "./../Components/ChatWidgetForm";
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <Card />
-      <About />
-      <Services />
-      <Portfolio />
-      <Contact />
-      <ChatWidgetForm></ChatWidgetForm>
+      <div id="Home">
+        <Navbar />
+        <Card />
+        <About />
+        <Services />
+        <Portfolio />
+        <Contact />
+        <ChatWidgetForm></ChatWidgetForm>
+        <Footer></Footer>
+      </div>
     </>
   );
 };
