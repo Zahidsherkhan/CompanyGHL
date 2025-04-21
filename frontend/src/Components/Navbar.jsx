@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { AiOutlineMenu } from "react-icons/ai";
 import logo from "../assets/logo.jpg";
 const Navbar = () => {
@@ -60,9 +61,11 @@ const Navbar = () => {
         </nav>
 
         <div className="flex gap-4 mr-5 sm:max-w-3/4 pl-3.5">
-          <button className="py-6 px-7 border rounded-full h-10 flex items-center bg-black text-white justify-center text-[19px]">
-            Get Started
-          </button>
+          <Link to="/getstarted">
+            <button className="py-6 px-7 border rounded-full h-10 flex items-center bg-black text-white justify-center text-[19px] cursor-pointer">
+              Get Started
+            </button>
+          </Link>
           <div
             className="flex items-center justify-center pl-2 pr-0 ml-0 mr-0 lg:hidden"
             onClick={handleMenuClick}
