@@ -17,12 +17,39 @@ export default function ChatWidgetForm() {
       [name]: type === "checkbox" ? checked : value,
     });
   };
-
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form submitted:", form);
-    // Handle form submission logic here
+  
+    try {
+      const response = await fetch("http://localhost:3000/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+  
+      const data = await response.json();
+  
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setForm({
+          name: "",
+          phone: "",
+          email: "",
+          message: "",
+          consent: true,
+        });
+        setIsOpen(false);
+      } else {
+        alert("Failed to send message: " + data.error);
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("An error occurred. Please try again later.");
+    }
   };
+  
 
   return (
     <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end">
