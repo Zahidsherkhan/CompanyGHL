@@ -13,7 +13,11 @@ const Getstarted = () => {
         {/* Responsive grid for two forms */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* General Inquiry Form */}
-          <form className="flex flex-col gap-6 bg-white rounded-3xl p-8 shadow-md">
+          <form
+            action="http://localhost:3000/api/contact"
+            method="POST"
+            className="flex flex-col gap-6 bg-white rounded-3xl p-8 shadow-md"
+          >
             <h2 className="text-2xl font-semibold text-teal-600 mb-2">
               General Inquiry
             </h2>
@@ -24,6 +28,7 @@ const Getstarted = () => {
               </label>
               <input
                 id="inquiry-name"
+                name="fullName"
                 type="text"
                 placeholder="Your name"
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-400"
@@ -36,6 +41,7 @@ const Getstarted = () => {
               </label>
               <input
                 id="inquiry-email"
+                name="email"
                 type="email"
                 placeholder="you@example.com"
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-400"
@@ -51,6 +57,7 @@ const Getstarted = () => {
               </label>
               <textarea
                 id="inquiry-message"
+                name="message"
                 rows="4"
                 placeholder="Your message..."
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-400"
@@ -66,7 +73,11 @@ const Getstarted = () => {
           </form>
 
           {/* Hire Us Form */}
-          <form className="flex flex-col gap-6 bg-white rounded-3xl p-8 shadow-md">
+          <form
+            action="http://localhost:3000/api/contact"
+            method="POST"
+            className="flex flex-col gap-6 bg-white rounded-3xl p-8 shadow-md"
+          >
             <h2 className="text-2xl font-semibold text-teal-600 mb-2">
               Hire Us
             </h2>
@@ -77,6 +88,7 @@ const Getstarted = () => {
               </label>
               <input
                 id="hire-name"
+                name="fullName"
                 type="text"
                 placeholder="Your name"
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-400"
@@ -89,6 +101,7 @@ const Getstarted = () => {
               </label>
               <input
                 id="hire-email"
+                name="email"
                 type="email"
                 placeholder="you@example.com"
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-400"
@@ -101,6 +114,7 @@ const Getstarted = () => {
               </label>
               <input
                 id="service"
+                name="service"
                 type="text"
                 placeholder="e.g. Website, App, Branding"
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-400"
@@ -113,6 +127,7 @@ const Getstarted = () => {
               </label>
               <textarea
                 id="hire-message"
+                name="projectDetails"
                 rows="4"
                 placeholder="Briefly describe your project..."
                 className="w-full px-4 py-2 rounded-xl border border-gray-300 focus:ring-2 focus:ring-teal-400"
