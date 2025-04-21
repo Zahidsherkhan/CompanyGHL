@@ -23,7 +23,7 @@ app.post("/api/contact", async (req, res) => {
     from: email,
     to: "sajidsaleemkhattack@gmail.com",
     subject: `New Contact Form Submission from ${name}`,
-    text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message} Phone:${phone}`,
+    text: `Name: ${name}\nEmail: ${email}\nMessage:\n${message}`,
   };
 
   try {

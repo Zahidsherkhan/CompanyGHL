@@ -7,13 +7,13 @@ const Contact = () => {
       className="min-h-screen overflow-x-hidden sm:px-12 lg:grid lg:grid-cols-2"
     >
       <div className="flex pb-10  flex-col bg-white  m-6 p-6 border-0 rounded-3xl py-14 gap-12">
-        <div className="text-4xl font-medium">+92&nbsp;347&nbsp;9795053</div>
+        <div className="text-4xl font-medium">+92 3435395571</div>
         <hr />
         <div className="text-2xl">Address</div>
         <div>Islambad Gulberg Green, Golden Height</div>
         <hr />
         <div className="text-3xl">Email</div>
-        <div>sajidsaleem707@gmail.com</div>
+        <div>info@naxonsolutions.com</div>
       </div>
       {/* Form Contact */}
       <div className="flex pb-10 flex-col bg-stone-50 m-6 p-6 border-0 rounded-3xl py-14 gap-12 sm:px-14">

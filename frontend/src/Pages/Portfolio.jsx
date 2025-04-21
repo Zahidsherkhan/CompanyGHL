@@ -306,7 +306,7 @@ const Portfolio = () => {
             </div>
             <div className="flex">
               <IoMdCall className="w-6 h-6 mr-2" />
-              <a href="">0315 9405079</a>
+              <a href="">+92 3435395571</a>
             </div>
             <div className="flex">
               <CiLocationOn className="w-6 h-6 mr-2" />
