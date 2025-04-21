@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import logo from "../assets/logo.jpg";
+import { Link } from "react-scroll";
+
 const Navbar = () => {
   let [flag, setFlag] = useState(true);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -34,11 +36,13 @@ const Navbar = () => {
     <>
       <div className="w-full flex bg-blend-darken backdrop-blur-md h-22 z-50 items-center shadow-md px-2 sticky top-0 gap-10 justify-around">
         <div className="w-1/4 lg:flex lg:justify-end lg:pr-12 lg:w-[17%] lg:pl-5 ">
-          <img
-            className="w-13.5 h-13.5 rounded-4xl object-contain ml-5"
-            src={logo}
-            alt=""
-          />
+          <Link to="Home" spy={true} smooth={true} offset={-50} duration={500}>
+            <img
+              className="w-13.5 h-13.5 rounded-4xl object-contain ml-5"
+              src={logo}
+              alt=""
+            />
+          </Link>
         </div>
 
         <nav className="max-lg:hidden w-[55%] flex-wrap ">
@@ -53,7 +57,15 @@ const Navbar = () => {
                     : ""
                 }`}
               >
-                {item}
+                <Link
+                  to={`${item}`}
+                  spy={true}
+                  smooth={true}
+                  offset={-50}
+                  duration={500}
+                >
+                  {item}
+                </Link>
               </button>
             ))}
           </ul>

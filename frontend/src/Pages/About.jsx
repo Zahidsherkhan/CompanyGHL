@@ -36,7 +36,7 @@ const About = () => {
   ];
 
   return (
-    <div className="bg-gray-200 lg:mx-15">
+    <div id="About" className="bg-gray-200 lg:mx-15">
       <div className="h-90 bg-gray-200 flex items-center flex-col mb-24  px-6 gap-6 pt-20">
         <div className="text-4xl text-center font-semibold capitalize">
           We Take Your Business Success Seriously.

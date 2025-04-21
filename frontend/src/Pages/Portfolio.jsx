@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 import { useState } from "react";
 import { useSwipeable } from "react-swipeable";
 import about from "../assets/about.png";
@@ -114,7 +115,7 @@ const Portfolio = () => {
     trackMouse: true,
   });
   return (
-    <div className=" pb-30">
+    <div id="Portfolio" className=" pb-30">
       <div className="lg:grid lg:grid-cols-2 lg:gap-2">
         <div className="flex flex-col justify-center items-center ">
           <div className="p-6 pt-20">
@@ -134,10 +135,26 @@ const Portfolio = () => {
           </div>
           <div className="flex flex-row flex-wrap justify-center gap-2 sm:w-full">
             <button className=" py-6 px-2 mt-6 w-full border-0 rounded-full h-10 flex items-center justify-center bg-black text-gray-50 text-md sm:w-1/4 sm:py-5 ">
-              Schedule a Call
+              <Link
+                to="Contact"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+              >
+                Schedule a Call
+              </Link>
             </button>
             <button className=" py-6 mt-6 w-full border-0 rounded-full px-2 h-10 flex items-center justify-center bg-white text-black text-md sm:w-1/4 sm:py-5 max-md:mt-1 ">
-              Contact Us
+              <Link
+                to="Contact"
+                spy={true}
+                smooth={true}
+                offset={-50}
+                duration={500}
+              >
+                Contact Us
+              </Link>
             </button>
           </div>
         </div>
@@ -225,7 +242,15 @@ const Portfolio = () => {
         </div>
         <div>
           <button className="px-6 py-2 bg-black text-white rounded-4xl text-xl cursor-pointer">
-            Talk to sales
+            <Link
+              to="Contact"
+              spy={true}
+              smooth={true}
+              offset={-50}
+              duration={500}
+            >
+              Talk to sales
+            </Link>
           </button>
         </div>
       </div>

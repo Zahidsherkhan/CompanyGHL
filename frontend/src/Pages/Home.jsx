@@ -10,14 +10,16 @@ import ChatWidgetForm from "./../Components/ChatWidgetForm";
 const Home = () => {
   return (
     <>
-      <Navbar />
-      <Card />
-      <About />
-      <Services />
-      <Portfolio />
-      <Contact />
-      <ChatWidgetForm></ChatWidgetForm>
-      <Footer></Footer>
+      <div id="Home">
+        <Navbar />
+        <Card />
+        <About />
+        <Services />
+        <Portfolio />
+        <Contact />
+        <ChatWidgetForm></ChatWidgetForm>
+        <Footer></Footer>
+      </div>
     </>
   );
 };

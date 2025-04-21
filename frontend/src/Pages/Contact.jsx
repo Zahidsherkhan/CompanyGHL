@@ -2,7 +2,10 @@ import React from "react";
 
 const Contact = () => {
   return (
-    <div className="min-h-screen overflow-x-hidden sm:px-12 lg:grid lg:grid-cols-2">
+    <div
+      id="Contact"
+      className="min-h-screen overflow-x-hidden sm:px-12 lg:grid lg:grid-cols-2"
+    >
       <div className="flex pb-10  flex-col bg-white  m-6 p-6 border-0 rounded-3xl py-14 gap-12">
         <div className="text-4xl font-medium">+92&nbsp;347&nbsp;9795053</div>
         <hr />
@@ -14,7 +17,11 @@ const Contact = () => {
       </div>
       {/* Form Contact */}
       <div className="flex pb-10 flex-col bg-stone-50 m-6 p-6 border-0 rounded-3xl py-14 gap-12 sm:px-14">
-        <form className="flex flex-col gap-6 w-full max-w-xl mx-auto">
+        <form
+          action="http://localhost:3000/api/contact"
+          method="POST"
+          className="flex flex-col gap-6 w-full max-w-xl mx-auto"
+        >
           <button className="text-3xl font-semibold hover:bg-black hover:text-white">
             Contact Us
           </button>
